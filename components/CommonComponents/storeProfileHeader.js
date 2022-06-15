@@ -51,7 +51,7 @@ export default function StoreProfileHeader() {
           marginVertical: 20,
         }}
       >
-        <Icon name="instagram" size={24} color={ThemeColours().black} />
+
       </TouchableOpacity> */}
       <Text style={profileStyles().subHeading}>21 Products</Text>
     </View>

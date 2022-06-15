@@ -24,7 +24,7 @@ export default function startingScreenStyles() {
       marginHorizontal: 5,
       fontSize: 8,
       color: ThemeColours().black,
-      fontFamily: 'Medium',
+
       fontWeight: '600',
     },
     imgContainer: {

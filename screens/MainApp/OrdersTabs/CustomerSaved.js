@@ -16,8 +16,7 @@ import {
 } from 'react-native';
 import globalStyles from '../../../styles/globalStyles';
 import ThemeColours from '../../../styles/themeColours';
-// import { Feather } from "@expo/vector-icons";
-import Icon from 'react-native-vector-icons/Feather';
+import {Bookmark} from 'react-native-feather';
 
 const CustomerSaved = ({navigation}) => {
   const colourScheme = useColorScheme();
@@ -96,10 +95,10 @@ const CustomerSaved = ({navigation}) => {
             <Text style={[globalStyles().aboveInput, {fontSize: 24}]}>
               No Saved Products
             </Text>
-            <Icon
-              name="bookmark"
-              size={36}
-              color={ThemeColours().black}
+            <Bookmark
+              height={24}
+              width={24}
+              stroke={ThemeColours().black}
               style={{margin: 10}}
             />
           </View>
@@ -123,13 +122,13 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 18,
-    fontFamily: 'Medium',
+
     textAlign: 'center',
     fontWeight: '600',
   },
   subHeading: {
     fontSize: 14,
-    fontFamily: 'Regular',
+
     textAlign: 'center',
     opacity: 0.4,
     marginVertical: 10,
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '70%',
     marginVertical: 20,
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -162,7 +161,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '70%',
     marginVertical: 20,
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -172,7 +171,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 0,
     fontSize: 18,
-    fontFamily: 'Regular',
+
     color: '#333',
   },
   imgBox: {

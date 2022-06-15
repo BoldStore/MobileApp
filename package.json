@@ -29,6 +29,7 @@
     "react-native-collapsible-tab-view": "^4.5.2",
     "react-native-elements": "^3.4.2",
     "react-native-fbsdk": "^3.0.0",
+    "react-native-feather": "^1.1.2",
     "react-native-flash-message": "^0.2.1",
     "react-native-gesture-handler": "~2.1.0",
     "react-native-pager-view": "5.4.9",

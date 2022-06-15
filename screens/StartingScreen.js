@@ -11,8 +11,8 @@ import globalStyles from '../styles/globalStyles';
 import ThemeColours from '../styles/themeColours';
 import InstaFeedComponent from '../components/LandingPageComponents/InstaFeedComponent';
 import BoldFeedComponent from '../components/LandingPageComponents/BoldFeedComponent';
-import Icon from 'react-native-vector-icons/Feather';
 // import { Feather } from "@expo/vector-icons";
+import {User, Truck} from 'react-native-feather';
 import React from 'react';
 
 export default function StartingScreen({navigation}) {
@@ -43,7 +43,7 @@ export default function StartingScreen({navigation}) {
             style={{
               fontSize: Dimensions.get('window').width / 5,
               color: ThemeColours().black,
-              fontFamily: 'Raleway',
+
               textTransform: 'uppercase',
             }}>
             Bold
@@ -53,7 +53,6 @@ export default function StartingScreen({navigation}) {
         {/* <Text
           style={{
             fontSize: 20,
-            fontFamily: "Bold",
             color: ThemeColours().black,
           }}
         >
@@ -80,10 +79,10 @@ export default function StartingScreen({navigation}) {
             onPress={() => {
               navigation.navigate('StoreSignUp');
             }}>
-            <Icon
-              name="truck"
-              size={24}
-              color={ThemeColours().black}
+            <Truck
+              width={24}
+              height={24}
+              stroke={ThemeColours().black}
               style={{marginRight: 10}}
             />
             <Text
@@ -91,7 +90,6 @@ export default function StartingScreen({navigation}) {
                 color: ThemeColours().black,
                 textAlign: 'center',
                 fontSize: 18,
-                fontFamily: 'Bold',
               }}>
               Continue As A Store
             </Text>
@@ -106,15 +104,14 @@ export default function StartingScreen({navigation}) {
               },
             ]}
             onPress={getStarted}>
-            <Icon
-              name="user"
-              size={24}
-              color={ThemeColours().white}
+            <User
+              width={24}
+              height={24}
+              stroke={ThemeColours().white}
               style={{marginRight: 10}}
             />
             <Text
               style={{
-                fontFamily: 'Bold',
                 color: ThemeColours().white,
                 fontSize: 18,
                 textAlign: 'center',
@@ -136,7 +133,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // fontFamily: "Regular",
+    //
   },
   btn: {
     // flex: 1,
@@ -148,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     width: '70%',
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
   },
   btn2: {
@@ -161,7 +158,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     width: '70%',
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
   },
   headingMain: {
@@ -169,7 +166,7 @@ const styles = StyleSheet.create({
     // marginTop: 80,
     textAlign: 'center',
     color: '#000',
-    fontFamily: 'Black',
+
     fontSize: 40,
     paddingBottom: 30,
     alignItems: 'center',

@@ -6,8 +6,8 @@ import {
   View,
   Share,
 } from 'react-native';
-// import { Feather, MaterialIcons } from "@expo/vector-icons";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import {Bookmark, Send} from 'react-native-feather';
 import {useState} from 'react';
 import feedStyles from '../../styles/feedStyles';
 import ThemeColours from '../../styles/themeColours';
@@ -79,15 +79,15 @@ const FeedComponent = ({navigation}) => {
 
       <View style={[feedStyles().bottomContainer, {paddingTop: 15}]}>
         <TouchableOpacity onPress={shareFeed}>
-          <Icon
-            name="send"
-            size={24}
-            color={ThemeColours().black}
+          <Send
+            height={24}
+            width={24}
+            stroke={ThemeColours().black}
             style={{marginRight: 10}}
           />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => SavingProducts}>
-          <Icon name="bookmark" size={24} color={ThemeColours().black} />
+          <Bookmark height={24} width={24} stroke={ThemeColours().black} />
         </TouchableOpacity>
       </View>
       <Text
@@ -110,7 +110,7 @@ const FeedComponent = ({navigation}) => {
         <Text
           style={{
             color: ThemeColours().grey,
-            fontFamily: 'Regular',
+
             paddingHorizontal: 10,
           }}
           onPress={() => {
@@ -122,7 +122,7 @@ const FeedComponent = ({navigation}) => {
         <Text
           style={{
             color: ThemeColours().grey,
-            fontFamily: 'Regular',
+
             paddingHorizontal: 10,
           }}
           onPress={() => {

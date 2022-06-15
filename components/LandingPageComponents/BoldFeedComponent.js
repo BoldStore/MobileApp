@@ -11,6 +11,7 @@ import React, {useState} from 'react';
 import startingScreenStyles from '../../styles/startingScreenStyles';
 import ThemeColours from '../../styles/themeColours';
 import SavingProducts from '../../functions/savingProducts';
+import {Bookmark, Send} from 'react-native-feather';
 
 const BoldFeedComponent = ({navigation}) => {
   const [ellipsis, setEllipsis] = useState(true);
@@ -79,23 +80,15 @@ const BoldFeedComponent = ({navigation}) => {
 
       <View style={[startingScreenStyles().bottomContainer, {paddingTop: 5}]}>
         <TouchableOpacity onPress={shareFeed}>
-          {/* <Icon
-            name="heart"
-            size={12}
-            color={ThemeColours().black}
-            style={{ marginRight: 10 }}
-          /> */}
-        </TouchableOpacity>
-        <TouchableOpacity onPress={shareFeed}>
-          <Icon
-            name="send"
-            size={12}
-            color={ThemeColours().black}
+          <Send
+            height={12}
+            width={12}
+            stroke={ThemeColours().black}
             style={{marginRight: 5}}
           />
         </TouchableOpacity>
         <TouchableOpacity onPress={SavingProducts}>
-          <Icon name="bookmark" size={12} color={ThemeColours().black} />
+          <Bookmark height={12} width={12} stroke={ThemeColours().black} />
         </TouchableOpacity>
       </View>
       <Text

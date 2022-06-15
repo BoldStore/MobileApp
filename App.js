@@ -19,7 +19,7 @@ import {
   View,
 } from 'react-native';
 import {AppearanceProvider} from 'react-native-appearance';
-
+import {makeStore} from './store/configureStore';
 import {
   Colors,
   DebugInstructions,
@@ -29,6 +29,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
 
+const store = makeStore();
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
   // const store = makeStore();
@@ -37,16 +39,16 @@ const App = () => {
   };
 
   return (
-    // <Provider store={store}>
-    <AppearanceProvider>
-      <StatusBar />
-      <NavigationContainer fallback={<Text>Loading...</Text>}>
-        <SignupStack />
-      </NavigationContainer>
-      {/* <FlashMessage position="top" /> */}
-      {/* <Toast position="bottom" bottomOffset={30} config={toastConfig} /> */}
-    </AppearanceProvider>
-    // </Provider>
+    <Provider store={store}>
+      <AppearanceProvider>
+        <StatusBar />
+        <NavigationContainer fallback={<Text>Loading...</Text>}>
+          <SignupStack />
+        </NavigationContainer>
+        {/* <FlashMessage position="top" /> */}
+        {/* <Toast position="bottom" bottomOffset={30} config={toastConfig} /> */}
+      </AppearanceProvider>
+    </Provider>
   );
 };
 

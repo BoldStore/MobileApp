@@ -67,7 +67,7 @@ const CustomerProfile = ({navigation}) => {
                 color: ThemeColours().black,
                 textAlign: 'center',
                 fontSize: 14,
-                fontFamily: 'Regular',
+
                 opacity: 0.3,
                 textDecorationLine: 'underline',
               }}>
@@ -141,7 +141,6 @@ const CustomerProfile = ({navigation}) => {
                   color: ThemeColours().grey,
                   textAlign: 'center',
                   fontSize: 14,
-                  fontFamily: 'Regular',
                 }}>
                 Update
               </Text>
@@ -153,7 +152,7 @@ const CustomerProfile = ({navigation}) => {
                   color: "#fff",
                   textAlign: "center",
                   fontSize: 14,
-                  fontFamily: "Regular",
+                  
                 }}
               >
                 Logout

@@ -10,12 +10,12 @@ import {
   View,
 } from 'react-native';
 // import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
-import Icon from 'react-native-vector-icons/Feather';
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
 import {login} from '../../services/authentication';
+import {Eye, EyeOff} from 'react-native-feather';
 
 export default function CustomerLogin({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -92,9 +92,9 @@ export default function CustomerLogin({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Icon name="eye" size={22} color={black} />
+                  <Eye height={22} width={22} stroke={black} />
                 ) : (
-                  <Icon name="eye-off" size={22} color={black} />
+                  <EyeOff height={22} width={22} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (

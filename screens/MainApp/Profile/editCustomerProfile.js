@@ -181,7 +181,6 @@ const EditCustomerProfile = ({navigation}) => {
                   color: ThemeColours().white,
                   textAlign: 'center',
                   fontSize: 18,
-                  fontFamily: 'Regular',
                 }}>
                 Save
               </Text>

@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import React, {useState} from 'react';
 import feedStyles from '../../styles/feedStyles';
 import ThemeColours from '../../styles/themeColours';
+import {Send} from 'react-native-feather';
 const Product = ({navigation}) => {
   const [ellipsis, setEllipsis] = useState(true);
   const shareOrder = async () => {
@@ -68,10 +69,10 @@ const Product = ({navigation}) => {
 
       <View style={[feedStyles().bottomContainer, {paddingTop: 15}]}>
         <TouchableOpacity onPress={shareOrder}>
-          <Icon
-            name="send"
-            size={24}
-            color={ThemeColours().black}
+          <Send
+            height={24}
+            width={24}
+            stroke={ThemeColours().black}
             style={{marginRight: 10}}
           />
         </TouchableOpacity>
@@ -79,7 +80,6 @@ const Product = ({navigation}) => {
       <View style={[styles.infoView, {color: ThemeColours().black}]}>
         <Text
           style={{
-            fontFamily: 'Bold',
             fontSize: 16,
             marginVertical: 10,
             marginTop: 0,
@@ -88,7 +88,6 @@ const Product = ({navigation}) => {
           Price:
           <Text
             style={{
-              fontFamily: 'Regular',
               color: ThemeColours().black,
             }}>
             {' '}
@@ -97,7 +96,6 @@ const Product = ({navigation}) => {
         </Text>
         <Text
           style={{
-            fontFamily: 'Bold',
             fontSize: 16,
             marginVertical: 10,
             marginTop: 0,
@@ -119,7 +117,7 @@ const Product = ({navigation}) => {
         </Text>
         {ellipsis ? (
           <Text
-            style={{color: 'grey', fontFamily: 'Regular'}}
+            style={{color: 'grey'}}
             onPress={() => {
               setEllipsis(!ellipsis);
             }}>
@@ -127,7 +125,7 @@ const Product = ({navigation}) => {
           </Text>
         ) : (
           <Text
-            style={{color: 'grey', fontFamily: 'Regular'}}
+            style={{color: 'grey'}}
             onPress={() => {
               setEllipsis(!ellipsis);
             }}>
@@ -135,12 +133,8 @@ const Product = ({navigation}) => {
           </Text>
         )}
         <View style={{marginVertical: 20}}>
-          <Text style={{color: 'grey', fontFamily: 'Regular'}}>
-            Order On : 22/22/2022 5:00PM
-          </Text>
-          <Text style={{color: 'grey', fontFamily: 'Regular'}}>
-            Status: Received
-          </Text>
+          <Text style={{color: 'grey'}}>Order On : 22/22/2022 5:00PM</Text>
+          <Text style={{color: 'grey'}}>Status: Received</Text>
         </View>
       </View>
     </View>
@@ -168,7 +162,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     fontSize: 14,
     color: '#000',
-    fontFamily: 'Bold',
+
     fontWeight: '900',
   },
   imgContainer: {

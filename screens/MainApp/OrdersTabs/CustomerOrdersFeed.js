@@ -13,12 +13,12 @@ import ThemeColours from '../../../styles/themeColours';
 import globalStyles from '../../../styles/globalStyles';
 import {useDispatch, useSelector} from 'react-redux';
 import {pastOrders} from '../../../store/actions/order';
-import Icon from 'react-native-vector-icons/Feather';
+import {ShoppingBag} from 'react-native-feather';
 
 const CustomerOrdersFeed = ({navigation, route}) => {
   const flatListRef = useRef();
-  const {id} = route.params ?? 0;
-  var {orders} = route.params;
+  const {id} = route?.params ?? 0;
+  var orders = [];
   const [refreshing, setRefreshing] = useState(false);
   // const posts = [
   //   require("../../../assets/images/dummyClothes/dress4.jpeg"),
@@ -71,7 +71,7 @@ const CustomerOrdersFeed = ({navigation, route}) => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      {orders.length > 0 ? (
+      {orders?.length > 0 ? (
         <FlatList
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
@@ -95,10 +95,10 @@ const CustomerOrdersFeed = ({navigation, route}) => {
           <Text style={[globalStyles().aboveInput, {fontSize: 24}]}>
             No Current Orders
           </Text>
-          <Icon
-            name="shopping-bag"
-            size={36}
-            color={ThemeColours().black}
+          <ShoppingBag
+            height={36}
+            width={36}
+            stroke={ThemeColours().black}
             style={{margin: 10}}
           />
         </View>

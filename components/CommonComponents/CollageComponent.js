@@ -1,15 +1,3 @@
-import {
-  Dimensions,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-// import { Feather } from "@expo/vector-icons";
-import Icon from 'react-native-vector-icons/Feather';
-import ThemeColours from '../../styles/themeColours';
-import feedStyles from '../../styles/feedStyles';
 import Grid3 from '../RandomGrid/grid3';
 import Grid2 from '../RandomGrid/grid2';
 import Grid1 from '../RandomGrid/grid1';

@@ -16,7 +16,7 @@ import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createStore} from '../../store/actions/store';
-import Icon from 'react-native-vector-icons/Feather';
+import {Eye, EyeOff} from 'react-native-feather';
 
 export default function StoreSignup({navigation}) {
   const [code, setCode] = useState('');
@@ -104,9 +104,9 @@ export default function StoreSignup({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Icon name="eye" size={22} color={black} />
+                  <Eye height={22} width={22} stroke={black} />
                 ) : (
-                  <Icon name="eye-off" size={22} color={black} />
+                  <EyeOff height={22} width={22} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
@@ -140,9 +140,9 @@ export default function StoreSignup({navigation}) {
                   setSecureConfirmPassword(!secureConfirmPassword);
                 }}>
                 {secureConfirmPassword ? (
-                  <Icon name="eye" size={22} color={black} />
+                  <Eye height={22} width={22} stroke={black} />
                 ) : (
-                  <Icon name="eye-off" size={22} color={black} />
+                  <EyeOff height={22} width={22} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (

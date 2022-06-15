@@ -1,14 +1,21 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import { Feather } from "@expo/vector-icons";
 import HomePage from '../../screens/MainApp/HomePage';
-import Search from '../../screens/MainApp/Search';
+import SearchPage from '../../screens/MainApp/Search';
 import ProfileStack from './profileStack';
 import {Text, TouchableOpacity} from 'react-native';
 import OrderTopTabs from './orderTopTabs';
 import ThemeColours from '../../styles/themeColours';
 import HomePageStack from './homePageStack';
-import Icon from 'react-native-vector-icons/Feather';
 import React from 'react';
+import {
+  Home,
+  Layout,
+  ShoppingBag,
+  User,
+  Search,
+  LogOut,
+} from 'react-native-feather';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,19 +28,19 @@ const CustomerTabs = ({navigation}) => {
           let iconColor;
           if (route.name === 'HomeStack') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="home" size={24} color={iconColor} />;
+            return <Home height={24} width={24} color={iconColor} />;
           } else if (route.name === 'Search') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="search" size={24} color={iconColor} />;
+            return <Search height={24} width={24} color={iconColor} />;
           } else if (route.name === 'CustomerOrders') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="shopping-bag" size={24} color={iconColor} />;
+            return <ShoppingBag height={24} width={24} color={iconColor} />;
           } else if (route.name === 'ProfileStack') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="user" size={24} color={iconColor} />;
+            return <User height={24} width={24} color={iconColor} />;
           } else if (route.name === 'StoreDashboard') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="layout" size={24} color={iconColor} />;
+            return <Layout height={24} width={24} color={iconColor} />;
           }
 
           // You can return any component that you like here!
@@ -70,7 +77,7 @@ const CustomerTabs = ({navigation}) => {
       />
       <Tab.Screen
         name="Search"
-        component={Search}
+        component={SearchPage}
         options={{
           title: 'Search',
           headerTitleAlign: 'left',
@@ -135,10 +142,10 @@ const CustomerTabs = ({navigation}) => {
           headerRight: () => (
             <TouchableOpacity
               onPress={() => navigation.navigate('StartingScreen')}>
-              <Icon
-                name="log-out"
-                size={24}
-                color={ThemeColours().black}
+              <LogOut
+                height={20}
+                width={20}
+                stroke={ThemeColours().black}
                 style={{paddingHorizontal: 10, paddingRight: 20}}
               />
             </TouchableOpacity>

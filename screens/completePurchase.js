@@ -39,7 +39,6 @@ export default function CompletePurchase({navigation}) {
         <TouchableOpacity style={styles.btn2} onPress={getStarted}>
           <Text
             style={{
-              fontFamily: 'Bold',
               color: '#fff',
               fontSize: 18,
               textAlign: 'center',
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // fontFamily: "Regular",
+    //
   },
   btn: {
     // flex: 1,
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     width: '70%',
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
   },
   btn2: {
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     width: '70%',
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
   },
   headingMain: {
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
     // marginTop: 80,
     textAlign: 'center',
     color: '#000',
-    fontFamily: 'Black',
+
     fontSize: 40,
     alignItems: 'center',
     justifyContent: 'center',

@@ -84,13 +84,13 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 18,
-    fontFamily: 'Medium',
+
     textAlign: 'center',
     fontWeight: '600',
   },
   subHeading: {
     fontSize: 14,
-    fontFamily: 'Regular',
+
     textAlign: 'center',
     opacity: 0.4,
     marginVertical: 10,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '70%',
     marginVertical: 20,
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '70%',
     marginVertical: 20,
-    fontFamily: 'Black',
+
     fontWeight: 'bold',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 0,
     fontSize: 18,
-    fontFamily: 'Regular',
+
     color: '#333',
   },
   imgBox: {

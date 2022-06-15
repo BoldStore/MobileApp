@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   subHeading: {
     fontSize: 14,
-    fontFamily: 'Bold',
+
     fontWeight: '900',
   },
 });

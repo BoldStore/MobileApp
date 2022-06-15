@@ -8,12 +8,12 @@ import {
   View,
 } from 'react-native';
 // import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
-import Icon from 'react-native-vector-icons/Feather';
 import React, {useState} from 'react';
 import feedStyles from '../../../styles/feedStyles';
 import ThemeColours from '../../../styles/themeColours';
 import profileStyles from '../../../styles/profileStyles';
 import globalStyles from '../../../styles/globalStyles';
+import {CreditCard} from 'react-native-feather';
 const UpiCard = ({navigation}) => {
   return (
     <View
@@ -30,7 +30,7 @@ const UpiCard = ({navigation}) => {
           margin: 10,
         },
       ]}>
-      <Icon name="credit-card" size={24} color={ThemeColours().black} />
+      <CreditCard height={24} width={24} color={ThemeColours().black} />
       <Text style={[profileStyles().heading, {marginTop: 20}]}>
         Upi Details
       </Text>
@@ -47,7 +47,6 @@ const UpiCard = ({navigation}) => {
             color: ThemeColours().grey,
             textAlign: 'center',
             fontSize: 14,
-            fontFamily: 'Regular',
           }}>
           Update
         </Text>
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     fontSize: 14,
     color: '#000',
-    fontFamily: 'Bold',
+
     fontWeight: '900',
   },
   imgContainer: {

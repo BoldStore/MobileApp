@@ -14,10 +14,8 @@ import {
 import StoreProfileTopTabs from '../../../navigation/storeNavigation/storeProfileTopTabs';
 import globalStyles from '../../../styles/globalStyles';
 import profileStyles from '../../../styles/profileStyles';
-// import { MaterialIcons, Feather } from "@expo/vector-icons";
 import ThemeColours from '../../../styles/themeColours';
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 const StorePaymentDetails = ({navigation}) => {
   const colourScheme = useColorScheme();
   const isDarkMode = colourScheme === 'dark';
@@ -102,7 +100,6 @@ const StorePaymentDetails = ({navigation}) => {
               color: ThemeColours().grey,
               textAlign: 'center',
               fontSize: 14,
-              fontFamily: 'Regular',
             }}>
             Update
           </Text>

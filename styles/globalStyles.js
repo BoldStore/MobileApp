@@ -20,14 +20,14 @@ export default function globalStyles() {
     },
     heading: {
       fontSize: 26,
-      fontFamily: 'Bold',
+
       textAlign: 'center',
       color: ThemeColours().black,
       marginVertical: 10,
     },
     subHeading: {
       fontSize: 26,
-      fontFamily: 'Medium',
+
       textAlign: 'center',
     },
     btn: {
@@ -43,7 +43,7 @@ export default function globalStyles() {
       width: '100%',
 
       marginVertical: 10,
-      fontFamily: 'Regular',
+
       fontWeight: 'bold',
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -61,7 +61,7 @@ export default function globalStyles() {
       padding: 10,
       width: '100%',
       marginVertical: 10,
-      fontFamily: 'Black',
+
       fontWeight: 'bold',
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -74,7 +74,7 @@ export default function globalStyles() {
       padding: 10,
       paddingLeft: 0,
       fontSize: 16,
-      fontFamily: 'Regular',
+
       color: ThemeColours().black,
       marginVertical: 10,
       width: Dimensions.get('window').width - 40,
@@ -85,7 +85,7 @@ export default function globalStyles() {
     aboveInput: {
       textAlign: 'left',
       fontSize: 16,
-      fontFamily: 'Regular',
+
       color: ThemeColours().black,
     },
     flatListContainer: {

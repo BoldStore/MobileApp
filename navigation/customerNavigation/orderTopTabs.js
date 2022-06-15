@@ -4,9 +4,9 @@ import ThemeColours from '../../styles/themeColours';
 import {useColorScheme} from 'react-native-appearance';
 import CustomerOrdersGrid from '../../screens/MainApp/OrdersTabs/CustomerOrdersGrid';
 import CustomerOrdersFeed from '../../screens/MainApp/OrdersTabs/CustomerOrdersFeed';
-import Icon from 'react-native-vector-icons/Feather';
 import CustomerSaved from '../../screens/MainApp/OrdersTabs/CustomerSaved';
 import React from 'react';
+import {AlignJustify, Bookmark, Grid} from 'react-native-feather';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -23,13 +23,13 @@ export default function OrderTopTabs() {
           let iconColor;
           if (route.name === 'Grid') {
             iconColor = focused ? black : 'grey';
-            return <Icon name="grid" size={24} color={iconColor} />;
+            return <Grid height={24} width={24} stroke={iconColor} />;
           } else if (route.name === 'Feed') {
             iconColor = focused ? black : 'grey';
-            return <Icon name="align-justify" size={24} color={iconColor} />;
+            return <AlignJustify height={24} width={24} stroke={iconColor} />;
           } else if (route.name === 'Saved') {
             iconColor = focused ? black : 'grey';
-            return <Icon name="bookmark" size={24} color={iconColor} />;
+            return <Bookmark height={24} width={24} stroke={iconColor} />;
           }
         },
         tabBarActiveTintColor: black,

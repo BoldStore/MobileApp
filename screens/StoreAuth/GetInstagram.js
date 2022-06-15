@@ -13,7 +13,6 @@ import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 
 export default function GetInstagramUsername({navigation}) {
   const [username, setUsername] = useState('');

@@ -16,14 +16,14 @@ export default function profileStyles() {
     },
     heading: {
       fontSize: 18,
-      fontFamily: 'Medium',
+
       textAlign: 'center',
       fontWeight: '600',
       color: ThemeColours().black,
     },
     subHeading: {
       fontSize: 14,
-      fontFamily: 'Regular',
+
       textAlign: 'center',
       opacity: 0.5,
       marginVertical: 10,

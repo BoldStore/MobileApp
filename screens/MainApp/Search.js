@@ -11,12 +11,11 @@ import {
   View,
 } from 'react-native';
 import {SearchBar} from 'react-native-elements';
+import {Search} from 'react-native-feather';
 import CollageComponent from '../../components/CommonComponents/CollageComponent';
-// import { Ionicons } from "@expo/vector-icons";
 import ThemeColours from '../../styles/themeColours';
-import Icon from 'react-native-vector-icons/Feather';
 
-const Search = ({navigation}) => {
+const SearchPage = ({navigation}) => {
   const colourScheme = useColorScheme();
   const isDarkMode = colourScheme === 'dark';
   const [search, setSearch] = useState('');
@@ -58,7 +57,9 @@ const Search = ({navigation}) => {
             marginHorizontal: 10,
           }}
           placeholderTextColor="grey"
-          leftIcon={<Ionicons name="search" size={24} color="black" />}
+          leftIcon={
+            <Search height={24} width={24} stroke={ThemeColours().black} />
+          }
           style={{
             color: ThemeColours().black,
             fontSize: 16,
@@ -80,7 +81,7 @@ const Search = ({navigation}) => {
   );
 };
 
-export default Search;
+export default SearchPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

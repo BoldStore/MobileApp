@@ -14,7 +14,7 @@ import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
 import AskForCode from '../../functions/askForCode';
-import Icon from 'react-native-vector-icons/Feather';
+
 export default function NoCode({navigation}) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');

@@ -1,13 +1,21 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import { Feather } from "@expo/vector-icons";
 import HomePage from '../../screens/MainApp/HomePage';
-import Search from '../../screens/MainApp/Search';
+import SearchPage from '../../screens/MainApp/Search';
 import {Text, TouchableOpacity, View} from 'react-native';
 import StoreDashboard from '../../screens/MainApp/StoreDashboard';
 import ThemeColours from '../../styles/themeColours';
 import StoreProfileStack from './storeProfileStack';
-import Icon from 'react-native-vector-icons/Feather';
 import React from 'react';
+import {
+  Home,
+  Truck,
+  Search,
+  User,
+  Layout,
+  LogOut,
+  CreditCard,
+} from 'react-native-feather';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,19 +28,19 @@ const StoreTabs = ({navigation}) => {
           let iconColor;
           if (route.name === 'Home') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="home" size={24} color={iconColor} />;
+            return <Home height={24} width={24} color={iconColor} />;
           } else if (route.name === 'Search') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="search" size={24} color={iconColor} />;
+            return <Search height={24} width={24} color={iconColor} />;
           } else if (route.name === 'CustomerOrders') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="shopping-bag" size={24} color={iconColor} />;
+            return <ShoppingBag height={24} width={24} color={iconColor} />;
           } else if (route.name === 'StoreProfile') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="user" size={24} color={iconColor} />;
+            return <User height={24} width={24} color={iconColor} />;
           } else if (route.name === 'StoreDashboard') {
             iconColor = focused ? ThemeColours().black : 'grey';
-            return <Icon name="layout" size={24} color={iconColor} />;
+            return <Layout height={24} width={24} color={iconColor} />;
           }
 
           // You can return any component that you like here!
@@ -69,7 +77,7 @@ const StoreTabs = ({navigation}) => {
       />
       <Tab.Screen
         name="Search"
-        component={Search}
+        component={SearchPage}
         options={{
           title: 'Search',
           headerTitleAlign: 'left',
@@ -141,29 +149,29 @@ const StoreTabs = ({navigation}) => {
               }}>
               <TouchableOpacity
                 onPress={() => navigation.navigate('StorePaymentDetails')}>
-                <Icon
-                  name="credit-card"
-                  size={20}
-                  color={ThemeColours().black}
-                  style={{paddingHorizontal: 10}}
+                <CreditCard
+                  height={20}
+                  width={20}
+                  stroke={ThemeColours().black}
+                  style={{marginHorizontal: 10}}
                 />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => navigation.navigate('StoreSignup2')}>
-                <Icon
-                  name="truck"
-                  size={20}
-                  color={ThemeColours().black}
-                  style={{paddingHorizontal: 10}}
+                <Truck
+                  height={20}
+                  width={20}
+                  stroke={ThemeColours().black}
+                  style={{marginHorizontal: 10}}
                 />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => navigation.navigate('StartingScreen')}>
-                <Icon
-                  name="log-out"
-                  size={20}
-                  color={ThemeColours().black}
-                  style={{paddingHorizontal: 10, paddingRight: 20}}
+                <LogOut
+                  height={20}
+                  width={20}
+                  stroke={ThemeColours().black}
+                  style={{marginHorizontal: 10, marginRight: 20}}
                 />
               </TouchableOpacity>
             </View>

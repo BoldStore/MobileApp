@@ -14,7 +14,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useCallback, useState} from 'react';
-import Icon from 'react-native-vector-icons/Feather';
+
 export default function StoreSignup2({navigation}) {
   const [addressLine1, setAddressLine1] = useState('');
   const [addressLine2, setAddressLine2] = useState('');

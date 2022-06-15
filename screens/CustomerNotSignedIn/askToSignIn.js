@@ -13,7 +13,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/Feather';
+import {Eye, EyeOff} from 'react-native-feather';
 
 export default function AskToSignIn({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -86,9 +86,9 @@ export default function AskToSignIn({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Icon name="eye" size={22} color="black" />
+                  <Eye height={22} width={22} stroke={black} />
                 ) : (
-                  <Icon name="eye-off" size={22} color="black" />
+                  <EyeOff height={22} width={22} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
@@ -122,9 +122,9 @@ export default function AskToSignIn({navigation}) {
                   setSecureConfirmPassword(!secureConfirmPassword);
                 }}>
                 {secureConfirmPassword ? (
-                  <Icon name="eye" size={22} color="black" />
+                  <Eye height={22} width={22} stroke={black} />
                 ) : (
-                  <Icon name="eye-off" size={22} color="black" />
+                  <EyeOff height={22} width={22} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
