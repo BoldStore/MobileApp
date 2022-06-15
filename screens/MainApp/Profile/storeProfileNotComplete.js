@@ -20,6 +20,7 @@ import UpiCard from '../../../components/StoreComponents/CompleteSignUp/UpiCard'
 import DeliveryCard from '../../../components/StoreComponents/CompleteSignUp/DeliveryCard';
 import ThemeColours from '../../../styles/themeColours';
 import Icon from 'react-native-vector-icons/Feather';
+import {Award, Shield} from 'react-native-feather';
 
 const StoreProfileNotComplete = ({navigation}) => {
   const colourScheme = useColorScheme();
@@ -90,7 +91,7 @@ const StoreProfileNotComplete = ({navigation}) => {
                 @my_store_username
               </Text>
               {isVerified ? (
-                <Icon name="verified" size={24} color="#00B2FF" />
+                <Shieldld height={18} width={18} stroke="#00B2FF" />
               ) : (
                 <></>
               )}

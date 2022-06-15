@@ -16,7 +16,7 @@ import globalStyles from '../../styles/globalStyles';
 import SavingProducts from '../../functions/savingProducts';
 import Checkout from '../../functions/checkout';
 import React from 'react';
-import {Bookmark, Send} from 'react-native-feather';
+import {Award, Bookmark, Send, Shield} from 'react-native-feather';
 
 const Product = ({navigation}) => {
   const [ellipsis, setEllipsis] = useState(true);
@@ -59,7 +59,7 @@ const Product = ({navigation}) => {
             />
 
             <Text style={feedStyles().subHeading}>my_product</Text>
-            <Icon name="verified" size={18} color="#00B2FF" />
+            <Shield height={18} width={18} stroke="#00B2FF" />
           </View>
         </TouchableOpacity>
 

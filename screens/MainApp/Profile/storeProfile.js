@@ -17,6 +17,7 @@ import profileStyles from '../../../styles/profileStyles';
 import ThemeColours from '../../../styles/themeColours';
 import Icon from 'react-native-vector-icons/Feather';
 import React from 'react';
+import {Award, Shield} from 'react-native-feather';
 
 const StoreProfile = ({navigation}) => {
   const colourScheme = useColorScheme();
@@ -74,7 +75,7 @@ const StoreProfile = ({navigation}) => {
               @my_store_username
             </Text>
             {isVerified ? (
-              <Icon name="verified" size={24} color="#00B2FF" />
+              <Shield height={18} width={18} stroke="#00B2FF" />
             ) : (
               <></>
             )}

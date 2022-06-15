@@ -6,6 +6,7 @@ import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 // import * as Linking from 'expo-linking';
 import React from 'react';
+import {Award, Shield} from 'react-native-feather';
 
 export default function StoreProfileHeader() {
   const isVerified = true;
@@ -38,7 +39,7 @@ export default function StoreProfileHeader() {
           @my_store_username
         </Text>
         {isVerified ? (
-          <Icon name="verified" size={24} color="#00B2FF" />
+          <Shield height={18} width={18} stroke="#00B2FF" />
         ) : (
           <></>
         )}

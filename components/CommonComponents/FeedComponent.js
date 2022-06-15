@@ -7,7 +7,7 @@ import {
   Share,
 } from 'react-native';
 
-import {Bookmark, Send} from 'react-native-feather';
+import {Award, Bookmark, Send, Shield} from 'react-native-feather';
 import {useState} from 'react';
 import feedStyles from '../../styles/feedStyles';
 import ThemeColours from '../../styles/themeColours';
@@ -61,7 +61,7 @@ const FeedComponent = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Text style={feedStyles().subHeading}>my_store_username</Text>
-            <Icon name="verified" size={18} color="#00B2FF" />
+            <Shield height={18} width={18} stroke="#00B2FF" />
           </View>
         </View>
       </TouchableOpacity>

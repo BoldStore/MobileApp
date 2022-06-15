@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import ThemeColours from '../../styles/themeColours';
 import feedStyles from '../../styles/feedStyles';
 import React from 'react';
+import {Award, Shield} from 'react-native-feather';
 
 const Grid3 = props => {
   return (
@@ -38,7 +39,7 @@ const Grid3 = props => {
               alignItems: 'center',
             }}>
             <Text style={feedStyles().subHeading}>my_store_username</Text>
-            <Icon name="verified" size={18} color="#00B2FF" />
+            <Shield height={18} width={18} stroke="#00B2FF" />
           </View>
         </View>
 

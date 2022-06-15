@@ -12,7 +12,7 @@ import React, {useState} from 'react';
 import startingScreenStyles from '../../styles/startingScreenStyles';
 import ThemeColours from '../../styles/themeColours';
 import SavingProducts from '../../functions/savingProducts';
-import {Bookmark, Heart, Send} from 'react-native-feather';
+import {Award, Bookmark, Heart, Send} from 'react-native-feather';
 
 const InstaFeedComponent = ({navigation}) => {
   const [ellipsis, setEllipsis] = useState(true);
@@ -63,7 +63,7 @@ const InstaFeedComponent = ({navigation}) => {
             <Text style={startingScreenStyles().subHeading}>
               my_store_username
             </Text>
-            <Icon name="verified" size={10} color="#00B2FF" />
+            <Shield height={18} width={18} stroke="#00B2FF" />
           </View>
         </View>
       </TouchableOpacity>
