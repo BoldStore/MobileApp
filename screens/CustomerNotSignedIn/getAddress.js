@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
+import CustomButton from '../../components/CommonComponents/CustomButton';
 
 function GetAddress({navigation}) {
   const [addressLine1, setAddressLine1] = useState('');
@@ -86,6 +87,7 @@ function GetAddress({navigation}) {
               // keyboardType="default"
             />
           </View>
+          <CustomButton />
           <TouchableOpacity
             style={globalStyles().btn}
             onPress={() => {
@@ -100,19 +102,6 @@ function GetAddress({navigation}) {
               Done
             </Text>
           </TouchableOpacity>
-
-          {/* <TouchableOpacity style={globalStyles().btn2}>
-              <Text
-                style={{
-                  color: "#fff",
-                  textAlign: "center",
-                  fontSize: 14,
-                  
-                }}
-              >
-                Logout
-              </Text>
-            </TouchableOpacity> */}
         </View>
       </ScrollView>
     </View>

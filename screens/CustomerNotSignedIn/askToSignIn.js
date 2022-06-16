@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
+  useColorScheme,
 } from 'react-native';
 // import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
 import {TextInput} from 'react-native-gesture-handler';
@@ -25,6 +26,10 @@ export default function AskToSignIn({navigation}) {
   const handleSignup = () => {
     navigation.navigate('CustomerTabs');
   };
+  const colourScheme = useColorScheme();
+  const isDarkMode = colourScheme === 'dark';
+  const black = isDarkMode ? '#fff' : '#000';
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -86,9 +91,9 @@ export default function AskToSignIn({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
@@ -122,9 +127,9 @@ export default function AskToSignIn({navigation}) {
                   setSecureConfirmPassword(!secureConfirmPassword);
                 }}>
                 {secureConfirmPassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (

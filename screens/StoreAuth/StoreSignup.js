@@ -104,9 +104,9 @@ export default function StoreSignup({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
@@ -140,9 +140,9 @@ export default function StoreSignup({navigation}) {
                   setSecureConfirmPassword(!secureConfirmPassword);
                 }}>
                 {secureConfirmPassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (

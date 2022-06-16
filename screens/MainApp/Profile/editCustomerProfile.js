@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useLayoutEffect, useState} from 'react';
 import {
   Dimensions,
@@ -17,6 +18,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import globalStyles from '../../../styles/globalStyles';
 import ThemeColours from '../../../styles/themeColours';
 import {updateUser} from '../../../store/actions/user';
+import CustomInput from '../../../components/CommonComponents/CustomInput';
+import SecondaryButton from '../../../components/CommonComponents/SecondaryButton';
 
 const EditCustomerProfile = ({navigation}) => {
   const colourScheme = useColorScheme();
@@ -52,50 +55,32 @@ const EditCustomerProfile = ({navigation}) => {
           <View>
             <View style={{marginVertical: 10}}>
               <Text style={globalStyles().aboveInput}>Name</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setName(text);
-                }}
-                value={name}
-                placeholder="Full Name"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'Full Name'}
+                input={name}
+                setInput={setName}
               />
             </View>
             <View style={{marginVertical: 10}}>
               <Text style={globalStyles().aboveInput}>Age</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setAge(text);
-                }}
-                value={age}
-                placeholder="Age"
-                // keyboardType="default"
-              />
+              <CustomInput placeholder={'Age'} input={age} setInput={setAge} />
             </View>
             <View style={{marginVertical: 10}}>
               <Text style={globalStyles().aboveInput}>Email</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setEmail(text);
-                }}
-                value={email}
-                placeholder="Email"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'Email'}
+                input={email}
+                setInput={setEmail}
+                content={'emailAddress'}
+                autoComplete={'email'}
               />
             </View>
             <View style={{marginVertical: 10}}>
               <Text style={globalStyles().aboveInput}>Phone Number</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setPhoneNumber(text);
-                }}
-                value={phoneNumber}
-                placeholder="Phone Number"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'Phone Number'}
+                input={phoneNumber}
+                setInput={setPhoneNumber}
               />
             </View>
             <View style={{marginVertical: 10}}>
@@ -104,7 +89,7 @@ const EditCustomerProfile = ({navigation}) => {
                 {preferences.map((preference, index) => {
                   var color;
                   var backgroundColor;
-                  preference == myPreference
+                  preference === myPreference
                     ? ((color = ThemeColours().white),
                       (backgroundColor = ThemeColours().black))
                     : ((color = ThemeColours().black),
@@ -160,31 +145,16 @@ const EditCustomerProfile = ({navigation}) => {
                   @
                 </Text>
                 <TextInput
-                  style={{fontSize: 16}}
+                  style={{color: '#fff', fontSize: 15, width: '100%'}}
                   onChangeText={text => {
                     setUsername(text);
                   }}
                   value={username}
                   placeholder="username"
-                  // keyboardType="default"
                 />
               </View>
             </View>
-
-            <TouchableOpacity
-              style={globalStyles().btn2}
-              onPress={() => {
-                navigation.pop();
-              }}>
-              <Text
-                style={{
-                  color: ThemeColours().white,
-                  textAlign: 'center',
-                  fontSize: 18,
-                }}>
-                Save
-              </Text>
-            </TouchableOpacity>
+            <SecondaryButton text={'Save'} press={() => navigation.pop()} />
           </View>
         </View>
       </TouchableWithoutFeedback>

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Dimensions,
   Image,
@@ -17,6 +18,8 @@ import SavingProducts from '../../functions/savingProducts';
 import Checkout from '../../functions/checkout';
 import React from 'react';
 import {Award, Bookmark, Send, Shield} from 'react-native-feather';
+import CustomButton from './CustomButton';
+import VerifiedIcon from './VerifiedIcon';
 
 const Product = ({navigation}) => {
   const [ellipsis, setEllipsis] = useState(true);
@@ -54,12 +57,11 @@ const Product = ({navigation}) => {
                 height: 35,
                 borderRadius: 100,
                 borderWidth: 0.5,
-                borderColor: '#DBDBDB',
+                borderColor: '#2f3336',
               }}
             />
-
             <Text style={feedStyles().subHeading}>my_product</Text>
-            <Shield height={18} width={18} stroke="#00B2FF" />
+            <VerifiedIcon />
           </View>
         </TouchableOpacity>
 
@@ -80,7 +82,7 @@ const Product = ({navigation}) => {
               height={24}
               width={24}
               stroke={ThemeColours().black}
-              style={{marginRight: 10}}
+              style={{marginRight: 15}}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={SavingProducts}>
@@ -88,31 +90,39 @@ const Product = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.infoView}>
-          <Text
+          <View
             style={{
-              fontSize: 16,
-              marginVertical: 10,
-              marginTop: 0,
-              color: ThemeColours().black,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}>
-            Price{' '}
             <Text
               style={{
+                fontSize: 16,
+                marginVertical: 10,
+                marginTop: 0,
+                fontWeight: '700',
                 color: ThemeColours().black,
               }}>
-              ₹200
+              Price:{' '}
+              <Text
+                style={{
+                  color: ThemeColours().black,
+                }}>
+                ₹200
+              </Text>
             </Text>
-          </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              marginVertical: 10,
-              marginTop: 0,
-              color: ThemeColours().black,
-            }}>
-            Size Sm
-          </Text>
 
+            <Text
+              style={{
+                fontSize: 16,
+                marginVertical: 10,
+                marginTop: 0,
+                fontWeight: '700',
+                color: ThemeColours().black,
+              }}>
+              Size: M
+            </Text>
+          </View>
           <Text
             numberOfLines={ellipsis ? 2 : 100}
             onPress={() => {
@@ -121,8 +131,7 @@ const Product = ({navigation}) => {
             style={{color: ThemeColours().black}}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.{' '}
+            ad minim veniam{' '}
           </Text>
           {ellipsis ? (
             <Text
@@ -138,10 +147,11 @@ const Product = ({navigation}) => {
               onPress={() => {
                 setEllipsis(!ellipsis);
               }}>
-              Read Less
+              Show Less
             </Text>
           )}
-          <TouchableOpacity
+          <CustomButton text={'Proceed To Buy'} press={() => Checkout()} />
+          {/* <TouchableOpacity
             style={[
               globalStyles().btn,
               {
@@ -159,7 +169,7 @@ const Product = ({navigation}) => {
               }}>
               Proceed To Buy
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </TouchableWithoutFeedback>

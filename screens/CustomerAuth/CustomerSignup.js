@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Keyboard,
   SafeAreaView,
@@ -8,13 +9,14 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import { Feather } from "@expo/vector-icons";
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
 import {signup} from '../../services/authentication';
 import {Eye, EyeOff} from 'react-native-feather';
+import CustomButton from '../../components/CommonComponents/CustomButton';
+import CustomInput from '../../components/CommonComponents/CustomInput';
 
 export default function CustomerSignUp({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -30,10 +32,10 @@ export default function CustomerSignUp({navigation}) {
 
   const handleSignup = () => {
     if (
-      fullName != '' ||
-      email != '' ||
-      password != '' ||
-      confirmPassword != ''
+      fullName !== '' ||
+      email !== '' ||
+      password !== '' ||
+      confirmPassword !== ''
     ) {
       if (password != confirmPassword) {
         setError("Passwords don't match");
@@ -63,8 +65,14 @@ export default function CustomerSignUp({navigation}) {
           showsVerticalScrollIndicator={false}
           style={{width: '100%', padding: 20}}>
           <Text style={globalStyles().heading}>Sign Up As A Customer 🥳 </Text>
-
-          <TextInput
+          <CustomInput
+            placeholder={'Full Name'}
+            content="givenName"
+            autoComplete={'name'}
+            input={fullName}
+            setInput={setFullName}
+          />
+          {/* <TextInput
             style={globalStyles().input}
             onChangeText={text => {
               setFullName(text);
@@ -74,9 +82,15 @@ export default function CustomerSignUp({navigation}) {
             keyboardType="default"
             textContentType="givenName"
             autoCompleteType="name"
+          /> */}
+          <CustomInput
+            placeholder={'Email'}
+            content={'emailAddress'}
+            autoComplete={'email'}
+            input={email}
+            setInput={setEmail}
           />
-
-          <TextInput
+          {/* <TextInput
             style={globalStyles().input}
             onChangeText={text => {
               setEmail(text);
@@ -86,7 +100,7 @@ export default function CustomerSignUp({navigation}) {
             keyboardType="default"
             textContentType="emailAddress"
             autoCompleteType="email"
-          />
+          /> */}
           <View
             style={[
               globalStyles().input,
@@ -108,15 +122,15 @@ export default function CustomerSignUp({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {password != '' ? (
+            {password !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
@@ -144,23 +158,23 @@ export default function CustomerSignUp({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {confirmPassword != '' ? (
+            {confirmPassword !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecureConfirmPassword(!secureConfirmPassword);
                 }}>
                 {secureConfirmPassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
               <></>
             )}
           </View>
-
-          <TouchableOpacity
+          <CustomButton press={handleSignup} text={'Sign Up'} />
+          {/* <TouchableOpacity
             style={[
               globalStyles().btn,
               {
@@ -178,8 +192,7 @@ export default function CustomerSignUp({navigation}) {
               }}>
               Signup{' '}
             </Text>
-          </TouchableOpacity>
-
+          </TouchableOpacity> */}
           <Text
             style={{
               color: ThemeColours().black,

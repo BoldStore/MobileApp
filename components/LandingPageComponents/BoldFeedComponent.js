@@ -6,7 +6,7 @@ import {
   View,
   Share,
 } from 'react-native';
-// import { Feather, MaterialIcons } from "@expo/vector-icons";
+
 import React, {useState} from 'react';
 import startingScreenStyles from '../../styles/startingScreenStyles';
 import ThemeColours from '../../styles/themeColours';

@@ -1,8 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useState} from 'react';
 import {
   Dimensions,
   Image,
   Keyboard,
+  KeyboardAvoidingView,
   RefreshControl,
   ScrollView,
   StyleSheet,
@@ -15,10 +17,12 @@ import {
 import globalStyles from '../../../styles/globalStyles';
 import ThemeColours from '../../../styles/themeColours';
 import CompleteSignupAlert from '../../../functions/completeSignup';
+import CustomInput from '../../../components/CommonComponents/CustomInput';
+import CustomButton from '../../../components/CommonComponents/CustomButton';
 
 const CustomerProfile = ({navigation}) => {
-  const [addressLine1, setAddressLine1] = useState('');
-  const [addressLine2, setAddressLine2] = useState('');
+  const [locality, setLocality] = useState('');
+  const [appartment, setAppartment] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [pincode, setPincode] = useState('');
@@ -27,7 +31,7 @@ const CustomerProfile = ({navigation}) => {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     setRefreshing(false);
-  }, [refreshing]);
+  }, []);
 
   useEffect(() => {
     CompleteSignupAlert();
@@ -44,7 +48,10 @@ const CustomerProfile = ({navigation}) => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
-        <View style={[globalStyles().container, {padding: 20}]}>
+        <KeyboardAvoidingView
+          behavior="padding"
+          keyboardVerticalOffset={90}
+          style={[globalStyles().container, {padding: 20, marginTop: -25}]}>
           <Image
             resizeMode="cover"
             source={require('../../../assets/images/dummyClothes/dress4.jpeg')}
@@ -67,102 +74,62 @@ const CustomerProfile = ({navigation}) => {
                 color: ThemeColours().black,
                 textAlign: 'center',
                 fontSize: 14,
-
                 opacity: 0.3,
                 textDecorationLine: 'underline',
               }}>
               Edit Personal Details
             </Text>
           </TouchableOpacity>
-          <View style={{marginVertical: 10}}>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>Address Line 1</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setAddressLine1(text);
-                }}
-                value={addressLine1}
-                placeholder="Address Line 1"
-                // keyboardType="default"
-              />
-            </View>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>Address Line 2</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setAddressLine2(text);
-                }}
-                value={addressLine2}
-                placeholder="Address Line 2"
-                // keyboardType="default"
-              />
-            </View>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>City</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setCity(text);
-                }}
-                value={city}
-                placeholder="City"
-                // keyboardType="default"
-              />
-            </View>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>State</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setState(text);
-                }}
-                value={state}
-                placeholder="State"
-                // keyboardType="default"
-              />
-            </View>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>Pincode</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setPincode(text);
-                }}
-                value={pincode}
-                placeholder="Pincode"
-                // keyboardType="default"
-              />
-            </View>
-            <TouchableOpacity style={globalStyles().btn}>
-              <Text
-                style={{
-                  color: ThemeColours().grey,
-                  textAlign: 'center',
-                  fontSize: 14,
-                }}>
-                Update
-              </Text>
-            </TouchableOpacity>
-
-            {/* <TouchableOpacity style={globalStyles().btn2}>
-              <Text
-                style={{
-                  color: "#fff",
-                  textAlign: "center",
-                  fontSize: 14,
-                  
-                }}
-              >
-                Logout
-              </Text>
-            </TouchableOpacity> */}
+          <View style={styles.inputContainer}>
+            <Text style={styles.text}>Locality</Text>
+            <CustomInput
+              placeholder={'Locality'}
+              input={locality}
+              setInput={setLocality}
+            />
+            <Text style={styles.text}>Appartment/Suite</Text>
+            <CustomInput
+              placeholder={'Appartment/Suite'}
+              input={locality}
+              setInput={setLocality}
+            />
+            <Text style={styles.text}>City</Text>
+            <CustomInput
+              placeholder={'City'}
+              input={locality}
+              setInput={setLocality}
+            />
+            <Text style={styles.text}>State</Text>
+            <CustomInput
+              placeholder={'State'}
+              input={locality}
+              setInput={setLocality}
+            />
+            <Text style={styles.text}>Pincode</Text>
+            <CustomInput
+              placeholder={'Pincode'}
+              input={locality}
+              setInput={setLocality}
+            />
+            <CustomButton text={'Update'} />
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </ScrollView>
     </TouchableWithoutFeedback>
   );
 };
 
 export default CustomerProfile;
+
+const styles = StyleSheet.create({
+  text: {
+    color: '#fff',
+    fontSize: 15,
+    marginTop: 10,
+  },
+  inputContainer: {
+    width: '100%',
+    marginTop: 10,
+    flex: 1,
+  },
+});

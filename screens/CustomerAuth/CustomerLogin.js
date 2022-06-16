@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   Keyboard,
@@ -9,13 +10,14 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
 import {login} from '../../services/authentication';
 import {Eye, EyeOff} from 'react-native-feather';
+import CustomInput from '../../components/CommonComponents/CustomInput';
+import CustomButton from '../../components/CommonComponents/CustomButton';
 
 export default function CustomerLogin({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -28,7 +30,7 @@ export default function CustomerLogin({navigation}) {
   const black = isDarkMode ? '#fff' : '#000';
 
   const handleLogin = () => {
-    if (email != '' || password != '') {
+    if (email !== '' || password !== '') {
       const res = login(email, password);
       if (res) {
         console.log('res', res);
@@ -51,19 +53,14 @@ export default function CustomerLogin({navigation}) {
       <SafeAreaView style={globalStyles().container}>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          style={{width: '100%', padding: 20}}>
-          <Text style={globalStyles().heading}>Login As A Customer 😎 </Text>
-
-          <TextInput
-            style={globalStyles().input}
-            onChangeText={text => {
-              setEmail(text);
-            }}
-            value={email}
-            placeholder="Email"
-            keyboardType="default"
-            textContentType="emailAddress"
-            autoCompleteType="email"
+          style={{width: '100%', padding: 15}}>
+          <Text style={globalStyles().heading}>Login As A Customer 😎</Text>
+          <CustomInput
+            placeholder={'Email'}
+            content={'emailAddress'}
+            autoComplete={'email'}
+            input={email}
+            setInput={setEmail}
           />
           <View
             style={[
@@ -86,42 +83,22 @@ export default function CustomerLogin({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {password != '' ? (
+            {password !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (
               <></>
             )}
           </View>
-
-          <TouchableOpacity
-            style={[
-              globalStyles().btn,
-              {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                marginVertical: 20,
-              },
-            ]}
-            onPress={handleLogin}>
-            <Text
-              style={{
-                color: ThemeColours().black,
-                fontSize: 16,
-                textAlign: 'center',
-              }}>
-              Login{' '}
-            </Text>
-          </TouchableOpacity>
-
+          <CustomButton text={'Login'} press={handleLogin} />
           <Text
             style={{
               color: ThemeColours().black,
@@ -131,7 +108,6 @@ export default function CustomerLogin({navigation}) {
             }}>
             {error}
           </Text>
-
           <TouchableOpacity onPress={() => {}}>
             <Text
               style={{
@@ -144,7 +120,6 @@ export default function CustomerLogin({navigation}) {
               <Text style={{textDecorationLine: 'underline'}}>Reset.</Text>
             </Text>
           </TouchableOpacity>
-
           <TouchableOpacity
             onPress={() => navigation.navigate('CustomerSignUp')}>
             <Text

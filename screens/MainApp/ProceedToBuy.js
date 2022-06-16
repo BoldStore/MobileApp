@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useState} from 'react';
 import {
   Image,
@@ -19,7 +20,8 @@ export default function ProceedToBuy({navigation}) {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     setRefreshing(false);
-  }, [refreshing]);
+  }, []);
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView

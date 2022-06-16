@@ -52,7 +52,7 @@ const StoreProfileNotComplete = ({navigation}) => {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     setRefreshing(false);
-  }, [refreshing]);
+  }, []);
 
   return (
     <TouchableWithoutFeedback
@@ -91,7 +91,7 @@ const StoreProfileNotComplete = ({navigation}) => {
                 @my_store_username
               </Text>
               {isVerified ? (
-                <Shieldld height={18} width={18} stroke="#00B2FF" />
+                <Shield height={18} width={18} stroke="#00B2FF" />
               ) : (
                 <></>
               )}
@@ -110,7 +110,7 @@ const StoreProfileNotComplete = ({navigation}) => {
               paddingTop: 20,
             }}>
             <Progress.Circle
-              size={30}
+              // size={30}
               progress={0.5}
               showsText={true}
               thickness={3}

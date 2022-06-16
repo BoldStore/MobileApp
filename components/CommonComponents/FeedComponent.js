@@ -128,7 +128,7 @@ const FeedComponent = ({navigation}) => {
           onPress={() => {
             setEllipsis(!ellipsis);
           }}>
-          Read Less
+          Show Less
         </Text>
       )}
     </View>

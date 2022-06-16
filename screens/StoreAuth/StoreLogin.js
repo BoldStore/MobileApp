@@ -77,9 +77,9 @@ export default function StoreLogin({navigation}) {
                   setSecurePassword(!securePassword);
                 }}>
                 {securePassword ? (
-                  <Eye height={22} width={22} stroke={black} />
+                  <Eye height={18} width={18} stroke={black} />
                 ) : (
-                  <EyeOff height={22} width={22} stroke={black} />
+                  <EyeOff height={18} width={18} stroke={black} />
                 )}
               </TouchableOpacity>
             ) : (

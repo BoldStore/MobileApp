@@ -31,7 +31,7 @@ export default function StoreSignup2({navigation}) {
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     setRefreshing(false);
-  }, [refreshing]);
+  }, []);
 
   return (
     <TouchableWithoutFeedback
