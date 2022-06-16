@@ -21,11 +21,13 @@ export default function dashboardStyles() {
       fontSize: 18,
       color: ThemeColours().black,
       textAlign: 'left',
+      fontFamily: 'Inter-Bold',
     },
     text: {
       fontSize: 18,
       color: ThemeColours().black,
       textAlign: 'right',
+      fontFamily: 'Inter-Regular',
     },
   });
 }

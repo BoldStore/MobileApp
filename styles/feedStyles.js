@@ -24,7 +24,7 @@ export default function feedStyles() {
       marginHorizontal: 10,
       fontSize: 12,
       color: ThemeColours().black,
-
+      fontFamily: 'Inter-Bold',
       fontWeight: '600',
     },
     imgContainer: {
