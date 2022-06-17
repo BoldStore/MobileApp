@@ -1,5 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
-  Image,
   Keyboard,
   SafeAreaView,
   ScrollView,
@@ -9,7 +9,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import {Ionicons, AntDesign, Feather} from '@expo/vector-icons';
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
@@ -17,6 +16,8 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createStore} from '../../store/actions/store';
 import {Eye, EyeOff} from 'react-native-feather';
+import CustomInput from '../../components/CommonComponents/CustomInput';
+import CustomButton from '../../components/CommonComponents/CustomButton';
 
 export default function StoreSignup({navigation}) {
   const [code, setCode] = useState('');
@@ -55,27 +56,18 @@ export default function StoreSignup({navigation}) {
           <Text style={[globalStyles().heading, {marginBottom: 40}]}>
             Sign Up As A Store 😉
           </Text>
-
-          <TextInput
-            style={globalStyles().input}
-            onChangeText={text => {
-              setCode(text);
-            }}
-            value={code}
-            placeholder="Unique Signup Code"
-            keyboardType="numeric"
+          <CustomInput
+            placeholder={'Unique Signup Code'}
+            type={'numeric'}
+            input={code}
+            setInput={setCode}
           />
-
-          <TextInput
-            style={globalStyles().input}
-            onChangeText={text => {
-              setEmail(text);
-            }}
-            value={email}
-            placeholder="Email"
-            keyboardType="default"
-            textContentType="emailAddress"
-            autoCompleteType="email"
+          <CustomInput
+            placeholder={'Email'}
+            input={email}
+            setInput={setEmail}
+            content={'emailAddress'}
+            autoComplete={'email'}
           />
           <View
             style={[
@@ -98,7 +90,7 @@ export default function StoreSignup({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {password != '' ? (
+            {password !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecurePassword(!securePassword);
@@ -134,7 +126,7 @@ export default function StoreSignup({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {confirmPassword != '' ? (
+            {confirmPassword !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecureConfirmPassword(!secureConfirmPassword);
@@ -149,27 +141,7 @@ export default function StoreSignup({navigation}) {
               <></>
             )}
           </View>
-
-          <TouchableOpacity
-            style={[
-              globalStyles().btn,
-              {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                marginVertical: 20,
-              },
-            ]}
-            onPress={handleSignup}>
-            <Text
-              style={{
-                color: ThemeColours().black,
-                fontSize: 16,
-                textAlign: 'center',
-              }}>
-              Signup{' '}
-            </Text>
-          </TouchableOpacity>
-
+          <CustomButton text={'Sign Up'} press={handleSignup} />
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('StoreLogin');
@@ -179,10 +151,10 @@ export default function StoreSignup({navigation}) {
                 color: ThemeColours().black,
                 fontSize: 16,
                 textAlign: 'center',
-                marginTop: 10,
+                marginTop: 25,
               }}>
               Have An Account Already?{' '}
-              <Text style={{textDecorationLine: 'underline'}}>Login.</Text>
+              <Text style={{textDecorationLine: 'underline'}}>Login</Text>
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -197,7 +169,7 @@ export default function StoreSignup({navigation}) {
                 marginTop: 10,
               }}>
               Don't Have A Signup Code?{' '}
-              <Text style={{textDecorationLine: 'underline'}}>Click Here.</Text>
+              <Text style={{textDecorationLine: 'underline'}}>Get Code</Text>
             </Text>
           </TouchableOpacity>
         </ScrollView>

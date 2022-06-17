@@ -8,12 +8,13 @@ const CustomInput = ({
   input,
   setInput,
   secureTextEntry,
+  type,
 }) => {
   return (
     <TextInput
       style={styles.input}
       placeholder={placeholder}
-      keyboardType="default"
+      keyboardType={type ? type : 'default'}
       autoComplete={autoComplete}
       textContentType={content}
       value={input}

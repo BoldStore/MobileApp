@@ -1,5 +1,4 @@
 import {
-  Image,
   Keyboard,
   SafeAreaView,
   ScrollView,
@@ -9,13 +8,14 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useState} from 'react';
-
+import CustomInput from '../../components/CommonComponents/CustomInput';
+import CustomButton from '../../components/CommonComponents/CustomButton';
 import {Eye, EyeOff} from 'react-native-feather';
+
 export default function StoreLogin({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,17 +38,12 @@ export default function StoreLogin({navigation}) {
           showsVerticalScrollIndicator={false}
           style={{width: '100%', padding: 20}}>
           <Text style={globalStyles().heading}>Login As A Store 😎 </Text>
-
-          <TextInput
-            style={globalStyles().input}
-            onChangeText={text => {
-              setEmail(text);
-            }}
-            value={email}
-            placeholder="Email"
-            keyboardType="default"
-            textContentType="emailAddress"
-            autoCompleteType="email"
+          <CustomInput
+            placeholder={'Email'}
+            input={email}
+            setInput={setEmail}
+            content={'emailAddress'}
+            autoComplete={'email'}
           />
           <View
             style={[
@@ -71,7 +66,7 @@ export default function StoreLogin({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {password != '' ? (
+            {password !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecurePassword(!securePassword);
@@ -86,26 +81,7 @@ export default function StoreLogin({navigation}) {
               <></>
             )}
           </View>
-
-          <TouchableOpacity
-            style={[
-              globalStyles().btn,
-              {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                marginVertical: 20,
-              },
-            ]}
-            onPress={handleLogin}>
-            <Text
-              style={{
-                color: ThemeColours().black,
-                fontSize: 16,
-                textAlign: 'center',
-              }}>
-              Login{' '}
-            </Text>
-          </TouchableOpacity>
+          <CustomButton press={handleLogin} text={'Login'} />
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('StoreLogin');
