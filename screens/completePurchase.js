@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   SafeAreaView,
@@ -59,10 +60,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    //
   },
   btn: {
-    // flex: 1,
     backgroundColor: '#fff',
     textAlign: 'center',
     color: '#000',
@@ -84,15 +83,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 15,
     width: '70%',
-
     fontWeight: 'bold',
   },
   headingMain: {
-    // flex: 1,
-    // marginTop: 80,
     textAlign: 'center',
     color: '#000',
-
     fontSize: 40,
     alignItems: 'center',
     justifyContent: 'center',

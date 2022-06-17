@@ -11,7 +11,6 @@ import globalStyles from '../styles/globalStyles';
 import ThemeColours from '../styles/themeColours';
 import InstaFeedComponent from '../components/LandingPageComponents/InstaFeedComponent';
 import BoldFeedComponent from '../components/LandingPageComponents/BoldFeedComponent';
-// import { Feather } from "@expo/vector-icons";
 import {User, Truck} from 'react-native-feather';
 import React from 'react';
 

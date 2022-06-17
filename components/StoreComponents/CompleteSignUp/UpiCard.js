@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+
 import {
   Dimensions,
   Image,
@@ -7,13 +9,14 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-// import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
 import React, {useState} from 'react';
 import feedStyles from '../../../styles/feedStyles';
 import ThemeColours from '../../../styles/themeColours';
 import profileStyles from '../../../styles/profileStyles';
 import globalStyles from '../../../styles/globalStyles';
 import {CreditCard} from 'react-native-feather';
+import CustomButton from '../../CommonComponents/CustomButton';
+
 const UpiCard = ({navigation}) => {
   return (
     <View
@@ -23,8 +26,8 @@ const UpiCard = ({navigation}) => {
           width: Dimensions.get('window').width / 2,
           maxWidth: 400,
           alignItems: 'center',
-          borderWidth: 0.5,
-          borderColor: ThemeColours().grey,
+          borderWidth: 1,
+          borderColor: '#2f3336',
           borderRadius: 7,
           padding: 15,
           margin: 10,
@@ -32,25 +35,15 @@ const UpiCard = ({navigation}) => {
       ]}>
       <CreditCard height={24} width={24} color={ThemeColours().black} />
       <Text style={[profileStyles().heading, {marginTop: 20}]}>
-        Upi Details
+        UPI Details
       </Text>
       <Text style={profileStyles().subHeading}>
-        Fill In Your Upi Details To Accept Instant Payouts!
+        Fill In Your UPI Details To Accept Instant Payouts!
       </Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('StorePaymentDetails');
-        }}
-        style={[globalStyles().btn, {width: '100%', marginBottom: 0}]}>
-        <Text
-          style={{
-            color: ThemeColours().grey,
-            textAlign: 'center',
-            fontSize: 14,
-          }}>
-          Update
-        </Text>
-      </TouchableOpacity>
+      <CustomButton
+        text={'Update'}
+        press={() => navigation.navigate('StorePaymentDetails')}
+      />
     </View>
   );
 };

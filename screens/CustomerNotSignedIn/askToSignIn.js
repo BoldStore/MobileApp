@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   Keyboard,
@@ -85,7 +86,7 @@ export default function AskToSignIn({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {password != '' ? (
+            {password !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecurePassword(!securePassword);
@@ -121,7 +122,7 @@ export default function AskToSignIn({navigation}) {
               textContentType="password"
               autoCompleteType="password"
             />
-            {confirmPassword != '' ? (
+            {confirmPassword !== '' ? (
               <TouchableOpacity
                 onPress={() => {
                   setSecureConfirmPassword(!secureConfirmPassword);

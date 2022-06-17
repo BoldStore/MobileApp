@@ -32,10 +32,6 @@ export default function GetInstagramUsername({navigation}) {
           <Text style={[globalStyles().heading, {marginBottom: 40}]}>
             You're Almost There 🥳
           </Text>
-          {/* <Text style={{ textAlign: "center", marginBottom: 40 }}>
-            Don't worry you are almost there!
-          </Text> */}
-
           <Text style={globalStyles().aboveInput}>Instagram Username</Text>
           <View
             style={[

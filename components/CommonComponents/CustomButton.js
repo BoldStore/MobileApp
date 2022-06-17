@@ -13,10 +13,11 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   button: {
+    width: '100%',
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderColor: '#2f3336',
-    borderWidth: 2,
+    borderColor: '#E7E9E9',
+    borderWidth: 1,
     borderRadius: 5,
     display: 'flex',
     alignItems: 'center',

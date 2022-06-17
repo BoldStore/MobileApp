@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Image,
   Keyboard,
@@ -9,15 +10,16 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-// import { Ionicons, AntDesign, Feather } from "@expo/vector-icons";
 import {TextInput} from 'react-native-gesture-handler';
 import globalStyles from '../../styles/globalStyles';
 import ThemeColours from '../../styles/themeColours';
 import React, {useCallback, useState} from 'react';
+import CustomInput from '../../components/CommonComponents/CustomInput';
+import CustomButton from '../../components/CommonComponents/CustomButton';
 
 export default function StoreSignup2({navigation}) {
-  const [addressLine1, setAddressLine1] = useState('');
-  const [addressLine2, setAddressLine2] = useState('');
+  const [locality, setLocality] = useState('');
+  const [appartment, setAppartment] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [pincode, setPincode] = useState('');
@@ -48,92 +50,49 @@ export default function StoreSignup2({navigation}) {
           <Text style={[globalStyles().heading, {marginBottom: 40}]}>
             Delivery Pickup Address 🏠
           </Text>
-          {/* <Text style={{ textAlign: "center", marginBottom: 40 }}>
-              Don't worry you are almost there!
-            </Text> */}
-
-          <View style={{marginVertical: 10}}>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>Address Line 1</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setAddressLine1(text);
-                }}
-                value={addressLine1}
-                placeholder="Address Line 1"
-                // keyboardType="default"
+          <View style={{marginVertical: 10, width: '100%'}}>
+            <View style={{marginBottom: 15}}>
+              <Text style={globalStyles().aboveInput}>Locality</Text>
+              <CustomInput
+                placeholder={'Locality'}
+                input={locality}
+                setInput={setLocality}
               />
             </View>
-            <View style={{marginVertical: 10}}>
-              <Text style={globalStyles().aboveInput}>Address Line 2</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setAddressLine2(text);
-                }}
-                value={addressLine2}
-                placeholder="Address Line 2"
-                // keyboardType="default"
+            <View style={{marginBottom: 15}}>
+              <Text style={globalStyles().aboveInput}>Appartment</Text>
+              <CustomInput
+                placeholder={'Appartment'}
+                input={appartment}
+                setInput={setAppartment}
               />
             </View>
-            <View style={{marginVertical: 10}}>
+            <View style={{marginBottom: 15}}>
               <Text style={globalStyles().aboveInput}>City</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setCity(text);
-                }}
-                value={city}
-                placeholder="City"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'City'}
+                input={city}
+                setInput={setCity}
               />
             </View>
-            <View style={{marginVertical: 10}}>
+            <View style={{marginBottom: 15}}>
               <Text style={globalStyles().aboveInput}>State</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setState(text);
-                }}
-                value={state}
-                placeholder="State"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'State'}
+                input={state}
+                setInput={setState}
               />
             </View>
-            <View style={{marginVertical: 10}}>
+            <View style={{marginBottom: 15}}>
               <Text style={globalStyles().aboveInput}>Pincode</Text>
-              <TextInput
-                style={globalStyles().input}
-                onChangeText={text => {
-                  setPincode(text);
-                }}
-                value={pincode}
-                placeholder="Pincode"
-                // keyboardType="default"
+              <CustomInput
+                placeholder={'Pincode'}
+                input={pincode}
+                setInput={setPincode}
               />
             </View>
           </View>
-
-          <TouchableOpacity
-            style={[
-              globalStyles().btn,
-              {
-                flexDirection: 'row',
-                justifyContent: 'center',
-                marginVertical: 20,
-              },
-            ]}
-            onPress={handleSignup}>
-            <Text
-              style={{
-                color: ThemeColours().black,
-                fontSize: 16,
-                textAlign: 'center',
-              }}>
-              Complete Your Signup
-            </Text>
-          </TouchableOpacity>
+          <CustomButton text={'Complete Your Sign Up'} press={handleSignup} />
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>

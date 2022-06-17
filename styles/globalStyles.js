@@ -20,14 +20,12 @@ export default function globalStyles() {
     },
     heading: {
       fontSize: 26,
-
       textAlign: 'center',
       color: ThemeColours().black,
       marginVertical: 10,
     },
     subHeading: {
       fontSize: 26,
-
       textAlign: 'center',
     },
     btn: {

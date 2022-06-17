@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   Dimensions,
   Image,
@@ -13,6 +14,7 @@ import ThemeColours from '../../../styles/themeColours';
 import profileStyles from '../../../styles/profileStyles';
 import globalStyles from '../../../styles/globalStyles';
 import {Truck} from 'react-native-feather';
+import CustomButton from '../../CommonComponents/CustomButton';
 
 const DeliveryCard = ({navigation}) => {
   return (
@@ -23,8 +25,8 @@ const DeliveryCard = ({navigation}) => {
           width: Dimensions.get('window').width / 2,
           maxWidth: 400,
           alignItems: 'center',
-          borderWidth: 0.5,
-          borderColor: ThemeColours().grey,
+          borderWidth: 1,
+          borderColor: '#2f3336',
           borderRadius: 7,
           padding: 15,
           margin: 10,
@@ -37,20 +39,10 @@ const DeliveryCard = ({navigation}) => {
       <Text style={profileStyles().subHeading}>
         Fill In The Address From Where You'll Be Shipping Orders!
       </Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('StoreSignUp2');
-        }}
-        style={[globalStyles().btn, {width: '100%', marginBottom: 0}]}>
-        <Text
-          style={{
-            color: ThemeColours().grey,
-            textAlign: 'center',
-            fontSize: 14,
-          }}>
-          Update
-        </Text>
-      </TouchableOpacity>
+      <CustomButton
+        text={'Update'}
+        press={() => navigation.navigate('StoreSignUp2')}
+      />
     </View>
   );
 };
